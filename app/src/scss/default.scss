@@ -1,7 +1,10 @@
 body {
+    aspect-ratio: 16/9;
     width: 100svw;
     height: 100svh;
-    background: rgba(18, 18, 19, 1);
+    background: linear-gradient(-35deg, #4B0AD0, #ED3DC8);
+	background-size: 150% 150%;
+	animation: gradient 10s ease infinite;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -13,10 +16,27 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(97, 96, 96, 0.384);
+    opacity: 0.8;   
 }
 
 .content{
     width: 100svw;
     display: flex;
     justify-content: center;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

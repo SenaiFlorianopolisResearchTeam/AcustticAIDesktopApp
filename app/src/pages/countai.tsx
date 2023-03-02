@@ -7,12 +7,12 @@ import Dropbox from "../components/dropbox";
 export default function Countai() {
 
   return (
-    <>
+    <div className="blur">
       <Navbar/>
       <div className="content">
         <Dropbox/>
         <h1>Countai</h1>
       </div>
-    </>
+    </div>
   );
 }

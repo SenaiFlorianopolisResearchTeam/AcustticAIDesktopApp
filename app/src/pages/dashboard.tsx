@@ -7,12 +7,12 @@ import Dropbox from "../components/dropbox";
 export default function Dashboard() {
 
   return (
-    <>
+    <div className="blur">
       <Navbar/>
       <div className="content">
         <Dropbox/>
         <h1>Dashboard</h1>
       </div>
-    </>
+    </div>
   );
 }
