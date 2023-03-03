@@ -4,6 +4,7 @@ import Image from "next/image";
 import isOnline from 'is-online';
 import Link from "next/link";
 import Logo from "../../public/logo.png"
+import Login from "../components/login";
 
 export default function App() {
 
@@ -16,14 +17,12 @@ export default function App() {
         window.location.href = '/dashboard';
       }
     }
-    checkInternetConnection();
+    checkInternetConnection(); 
   }, []);
 
   return (
-    <div className="blur">
-      <Image src={Logo} alt="logo" width={200} height={200}/>
-      <h1>login</h1>
-      <Link href="/signup">signup</Link>
+    <div className="content">
+      <Login/>
     </div>
   );
 }
