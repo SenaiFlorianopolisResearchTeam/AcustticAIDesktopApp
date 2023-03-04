@@ -1,9 +1,5 @@
-import { useState, useEffect } from "react";
-import { invoke } from "@tauri-apps/api/tauri";
-import Image from "next/image";
+import { useEffect } from "react";
 import isOnline from 'is-online';
-import Link from "next/link";
-import Logo from "../../public/logo.png"
 import Login from "../components/login";
 
 export default function App() {

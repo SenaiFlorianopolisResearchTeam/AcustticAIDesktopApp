@@ -5,8 +5,9 @@
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
-fn login(email: &str, pass: &str, newpass: &str) -> () {
-    println!("{}", email)
+fn login(email: &str, _pass: &str, _newpass: &str) -> Result<String, String> {
+    let resultado = format!("Os parâmetros foram: {}, {}, {}", email, _pass, _newpass);
+    Ok(resultado)
 }
 
 fn main() {
