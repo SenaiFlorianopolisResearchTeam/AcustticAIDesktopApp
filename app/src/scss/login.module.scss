@@ -2,5 +2,25 @@
     aspect-ratio: 9/10;
     width: 40%;
     background: rgba(15, 14, 14, 0.28);
-    border-radius: 15px
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.input{
+    min-width: 80%;
+    height: 15%;
+    border-radius: 5px;
+    background: rgba(15, 14, 14, 0.28);
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-around;
 }

@@ -8,9 +8,9 @@ export default function Login(){
         try {
             const resultado = await invoke('login', {email, pass, newpass});
             console.log(resultado);
-          } catch (e) {
+        } catch (e) {
             console.error(e);
-          }
+        }
     }
 
     const testemail = "a@gmail.com"
@@ -18,11 +18,14 @@ export default function Login(){
 
     return(
         <div className={Styles.login}>
-            <input type="email"/>
-            <input type="password"/>
-            <input type="password"/>
-            <button onClick={() => Loginauth(testemail, testpass, testpass)}>Logar</button>
-            <Link href="/signup">Signup</Link>
+            <p>Login</p>
+            <input type="email" className={Styles.input}/>
+            <input type="password" className={Styles.input}/>
+            <input type="password" className={Styles.input}/>
+            <div className={Styles.buttons}>
+                <button onClick={() => Loginauth(testemail, testpass, testpass)}>Logar</button>
+                <Link href="/signup">Signup</Link>
+            </div>
         </div>
     )
 }
