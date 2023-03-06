@@ -1,3 +1,5 @@
 .env
 vehicles-2
 venv
+yolov8s.pt
+ByteTrack

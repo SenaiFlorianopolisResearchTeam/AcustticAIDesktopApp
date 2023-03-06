@@ -17,3 +17,8 @@ roboflow
 onnx==1.13.1
 onnxruntime==1.12.0
 onnx-simplifier==0.3.5
+ultralytics
+cython
+bbox
+onemetric
+supervision==0.1.0
