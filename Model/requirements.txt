@@ -1,5 +1,5 @@
 torch>=1.7
-opencv_python
+opencv_python==4.5.4.60
 loguru
 scikit-image
 tqdm
@@ -21,4 +21,4 @@ ultralytics
 cython
 bbox
 onemetric
-supervision==0.1.0
+supervision==0.2.0

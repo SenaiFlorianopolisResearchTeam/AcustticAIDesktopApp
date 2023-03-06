@@ -1,3 +1,4 @@
+import os
 import ultralytics
 from ultralytics import YOLO
 import ByteTrack.yolox as yolox
@@ -7,13 +8,15 @@ from onemetric.cv.utils.iou import box_iou_batch
 # bt.BYTETracker ou yolox.tracker.byte_tracker.BYTETracker
 # bt.STrack ou yolox.tracker.byte_tracker.STrack
 import supervision
-from supervision.video.source import get_video_frames_generator
-from supervision.tools.detections import Detections, BoxAnnotator
+from supervision.video import get_video_frames_generator
+from supervision.detection.core import Detections, BoxAnnotator
 from supervision.draw.color import ColorPalette
-from supervision.video.dataclasses import VideoInfo
-from supervision.video.sink import VideoSink
+from supervision.video import VideoInfo
+from supervision.video import VideoSink
 
 from tqdm import tqdm
+
+HOME = os.getcwd()
 
 ultralytics.checks()
 
@@ -36,18 +39,20 @@ class BYTETTrackerArgs:
     
 MODEL = "yolov8s.pt"
 
+SOURCE_VIDEO_PATH = f"{HOME}\test\video.mp4"
+
+print(SOURCE_VIDEO_PATH)
+
 model = YOLO(MODEL)
 model.fuse()
 
 video_info = VideoInfo.from_video_path("./test/video.mp4")
 
-print("video_info {}".format(video_info))
-
 generator = get_video_frames_generator("./test/video.mp4") # video path
 
 box_annotator = BoxAnnotator(color=ColorPalette(), thickness=4, text_thickness=4, text_scale=2)
 
-with VideoSink("./test/video.mp4", video_info) as sink:
+with VideoSink(target_path="./test/video.mp4", video_info=video_info) as sink:
     for frame in tqdm(generator, total=video_info.total_frames):
 
         results = model(frame)[0]
